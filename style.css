@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.container{
+    font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.left{
+    width:25vw;
+    padding:10px;
+
+}    
+
+.right{
+    width:75vw;
+}
+
+.home .list ul li{
+    display: flex;
+    gap:10px;
+    padding-left:5px;
+    margin:8px 0px;
+
+    img{
+        width:30px;
+        height:25px;
+        /* background-color: red; */
+    }
+}
+.home{
+    .logo{
+        padding-top:10px;
+        padding-left:5px;
+        /* margin-left:20px; */
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            height:30px;
+            /* background-color: red; */
+            width:80px;
+        }
+        img:nth-child(2){
+            filter: invert(1);
+            height:24px;
+        }
+    }
+}
+.library{
+    padding:10px;
+    min-height: 80vh;
+    position: relative;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+}
+.heading img{
+    width:30px;
+    height: 30px;
+    filter:invert(1);
+}
+.heading h2{
+    font-size: medium;
+}
+
+.left .footer{
+    position: absolute;
+    bottom:10px;
+    left:5px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:5px;
+    font-size:12px;
+    background-color: rgb(37, 37, 37);
+    padding:8px;
+    border-radius: 5px;
+    z-index:2;
+}
+.left .footer a{
+    text-decoration: none;
+    color:white;
+}
+
+.songList{
+    /* background-color: red; */
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.songList ul{
+    list-style-type: none;
+    list-style-position: inside;
+    li{
+        padding:5px 8px;
+        margin:5px 2px;
+        background-color: black;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size:0.8rem;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        img{
+            filter: invert(1);
+            width:30px;
+        }
+        .name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:8px;
+            img{
+                width:20px;
+            }
+            p{
+                overflow: hidden;
+                /* background-color: red; */
+            }
+        }
+        .playicon{
+            display: flex;
+            align-items: center;
+            gap:10px;
+        }
+        .playicon:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+
+    }
+}
+
+.right{
+    /* background-color: blueviolet; */
+    height:100vh;
+    position: relative;
+    .header{
+        /* width:calc(75vw - 15px); */
+        border-radius: 10px;
+        background-color: rgb(23, 23, 23);
+        margin:20px 5px;
+        padding:20px;
+        display:flex;
+        font-weight: 800;
+        font-size: 1.2rem;
+        justify-content: space-between;
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button:nth-child(1){
+        border:none;
+        margin:10px 20px;
+        background-color: black;
+        color:white;
+    }
+    button:nth-child(2){
+        padding:15px 25px;
+        border-radius: 25px;;
+        background-color: white;
+        color:black;
+    }
+    button:nth-child(2):hover{
+        transform: scale(1.03);
+    }
+
+    .playlist{
+        margin-top:20px;
+        margin-left:5px;
+        margin-right:10px;
+        padding:10px;
+        border-radius: 7px;
+        
+        background-color: rgb(27, 27, 27);;
+        text-align: center;
+        /* max-height:70vh; */
+        overflow: auto;
+    }
+
+    .cardContainer{
+        /* background-color: red; */
+        display: flex;
+        flex-wrap: wrap;
+        height: 68vh;
+        overflow-y: auto;
+    }
+    .card{
+        background-color: rgb(59, 59, 59);
+        padding:15px;
+        margin:8px;
+        width:200px;
+        height:300px;
+        border-radius: 10px;
+        /* text-align: cente; */
+        position: relative;
+        img{
+            margin:0px auto;
+            border-radius: 7px;
+            width:100%;
+            /* padding-left: 5px; */
+            align-items: center;
+            height:70%;
+            object-fit: cover;
+        }
+        h1{
+            font-size: 1.2rem;
+        }
+        p{
+            font-size: 0.88rem;
+            color:rgb(168, 168, 168);
+        }
+
+        .play{
+            width:50px;
+            height:50px;
+            border-radius: 20px;
+            background-color: rgb(122, 233, 152);
+            position: absolute;
+            bottom:100px;
+            right:20px;
+            transform: scale(0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            img{
+                height:40%;
+                width:60%;
+                object-fit: cover;
+                filter: invert(1);
+            }
+        }
+        .play:hover{
+            transform: scale(1);
+        }
+    }
+    .card:hover{
+        transform: scale(1.02);
+        .play{
+            opacity: 1;
+        }
+    }
+
+    .playbar{
+        /* height:100px; */
+        margin:10px;
+        border-radius: 7px;
+        background-color: rgb(56, 179, 113);
+        position: sticky;
+        /* top:85vh; */
+        bottom:0vh;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .songButton{
+        /* background-color: red; */
+        /* margin-top:px; */
+        img{
+            margin:10px;
+            cursor: pointer;
+        }
+        img:nth-child(2){
+            height:25px;
+            transform: scale(1.2);
+            filter: invert(1);
+        }
+    }
+    .seekbar{
+        position: relative;
+        cursor: pointer;
+    }
+    .bar{
+        width:60vw;
+        height:5px;
+        border-radius: 2px;
+        background-color: aqua;
+        position: relative;
+    }
+    .gola{
+        width:15px;
+        height:15px;
+        background-color: rgb(237, 237, 237);
+        border-radius: 50%;
+        position: absolute;
+        top:-5px;
+    }
+    .songTime{
+        align-self: flex-start;
+        padding:10px 20px;
+    }
+    .songName{
+        width:90%;
+        /* height:30px; */
+        padding-top:5px;
+        overflow: hidden;
+        /* background-color: red; */
+    }
+
+    .volumebar{
+        /* background-color:red; */
+        width:30vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:20px;
+        padding:10px 0px;
+        /* position: relative; */
+        .volbar{
+            width:20vw;
+            height:6px;
+            border-radius: 2px;
+            background-color: orangered;
+            cursor: pointer;
+            position: relative;
+        }
+        .volgola{
+            position: absolute;
+            height:10px;
+            width:10px;
+            border-radius: 50%;
+            z-index: 90;
+            top:-3px;
+            left:100%;
+            background-color: rgb(239, 246, 22);
+        }
+        img{
+            cursor: pointer;
+        }
+    }
+
+}
+
+@media screen and (min-width:481px) {
+    #menu{
+        display: none;
+    }
+    .close{
+        display: none;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .left{
+        position: absolute;
+        left: -100vw;
+        /* width:80vw; */
+        z-index: 10;
+    }
+    .right{
+        width:100vw;
+
+        .card{
+            width:150px;
+            height:250px;
+            h1{
+                font-size:1rem;
+            }
+            p{
+                font-size:0.7rem;;                
+            }
+        }
+
+    }
+    #menu{
+        display: block;
+        padding-right:20px;
+    }
+    .close{
+        /* background-color: red; */
+        display: block;
+        margin-left: 110px;
+    }
+}
+
+
+
